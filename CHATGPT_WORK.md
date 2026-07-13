@@ -9,13 +9,20 @@ ChatGPT Work mode does not emulate tmux or launch additional Claude, Codex, or C
 
 ## Install
 
-Install this repository as a plugin in ChatGPT Work or Codex using its GitHub repository URL:
+The repository includes a repo-scoped marketplace at `.agents/plugins/marketplace.json`. Its plugin package lives at `plugins/multi-agent-shogun/` and bundles the `run-shogun-work` skill.
 
-`https://github.com/evergreen90/multi-agent-shogun`
+### ChatGPT desktop app (Work or Codex)
 
-The plugin manifest is `.codex-plugin/plugin.json`. The bundled skill is `run-shogun-work`.
+1. Clone or open this repository as a project.
+2. Restart the ChatGPT desktop app so it discovers the repo marketplace.
+3. Open the plugin directory and select the **Multi-Agent Shogun** marketplace.
+4. Open **Multi-Agent Shogun**, select the plus button to install it, and start a new task.
 
-Plugin installation and sharing can be controlled by workspace policy. If the repository cannot be installed, ask the workspace administrator to allow the plugin or share it with the workspace.
+### ChatGPT Work on the web
+
+A local repo marketplace is not automatically published to the web plugin directory. A workspace administrator must distribute the plugin through an approved marketplace or workspace policy, or the plugin must be submitted for publication. After it is available in the plugin directory, install it there and start a new task.
+
+See the official OpenAI documentation for [building plugins](https://developers.openai.com/codex/build-plugins), [installing plugins](https://developers.openai.com/codex/plugins), and [using subagents](https://developers.openai.com/codex/subagents).
 
 ## Use
 
@@ -48,6 +55,6 @@ The Work formation deliberately combines Shogun and Karo in the lead agent. With
 Validate the package with the built-in plugin and skill validators before publishing changes:
 
 ```bash
-python3 /path/to/plugin-creator/scripts/validate_plugin.py .
-python3 /path/to/skill-creator/scripts/quick_validate.py skills/run-shogun-work
+python3 /path/to/plugin-creator/scripts/validate_plugin.py plugins/multi-agent-shogun
+python3 /path/to/skill-creator/scripts/quick_validate.py plugins/multi-agent-shogun/skills/run-shogun-work
 ```
