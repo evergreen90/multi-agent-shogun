@@ -1,7 +1,0 @@
-interface:
-  display_name: "Multi-Agent Shogun"
-  short_description: "Coordinate complex work with parallel subagents"
-  default_prompt: "Use $run-shogun-work to delegate independent workstreams and return one verified result."
-
-policy:
-  allow_implicit_invocation: true
