@@ -17,6 +17,8 @@
 
 </div>
 
+> **ChatGPT Work対応:** このフォークには、tmuxやローカルAI CLIを使わずに動くネイティブ・サブエージェント版を追加しています。導入と利用方法は[ChatGPT Work版ガイド](CHATGPT_WORK.md)をご覧ください。
+
 <p align="center">
   <img src="images/screenshots/hero/latest-translucent-20260210-190453.png" alt="将軍ペインでの最新半透過セッションキャプチャ" width="940">
 </p>
