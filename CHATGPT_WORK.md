@@ -1,58 +1,83 @@
-# Multi-Agent Shogun for ChatGPT Work
+# ChatGPT Work版 Multi-Agent Shogun
 
-This repository supports two execution modes:
+このリポジトリは、次の2つの実行方式に対応しています。
 
-- **CLI mode**: the original tmux and YAML-mailbox formation.
-- **ChatGPT Work mode**: one lead agent coordinates up to three native subagents and integrates their results.
+- **CLI版**：tmuxとYAMLメールボックスを利用する従来の編成
+- **ChatGPT Work版**：1つの親エージェントが最大3つのネイティブ・サブエージェントを統率し、その成果を統合する編成
 
-ChatGPT Work mode does not emulate tmux or launch additional Claude, Codex, or Copilot CLI processes. It uses the platform's native subagent workflow, so agent activity remains visible in ChatGPT Work and does not require local background processes.
+ChatGPT Work版では、tmuxを再現したり、Claude、Codex、GitHub CopilotなどのCLIプロセスを追加で起動したりしません。ChatGPT Workが備えるネイティブなサブエージェント機能を利用するため、各エージェントの活動状況をChatGPT Work上で確認でき、ローカル環境でバックグラウンドプロセスを常駐させる必要もありません。
 
-## Install
+## インストール
 
-The repository includes a repo-scoped marketplace at `.agents/plugins/marketplace.json`. Its plugin package lives at `plugins/multi-agent-shogun/` and bundles the `run-shogun-work` skill.
+このリポジトリには、リポジトリ単位のマーケットプレイスとして`.agents/plugins/marketplace.json`を配置しています。プラグイン本体は`plugins/multi-agent-shogun/`にあり、`run-shogun-work`スキルを収録しています。
 
-### ChatGPT desktop app (Work or Codex)
+### ChatGPTデスクトップアプリ（WorkまたはCodex）
 
-1. Clone or open this repository as a project.
-2. Restart the ChatGPT desktop app so it discovers the repo marketplace.
-3. Open the plugin directory and select the **Multi-Agent Shogun** marketplace.
-4. Open **Multi-Agent Shogun**, select the plus button to install it, and start a new task.
+1. このリポジトリをクローンするか、プロジェクトとして開きます。
+2. リポジトリのマーケットプレイスを認識させるため、ChatGPTデスクトップアプリを再起動します。
+3. プラグインディレクトリを開き、マーケットプレイスから**Multi-Agent Shogun**を選択します。
+4. **Multi-Agent Shogun**を開き、プラスボタンを選択してインストールした後、新しいタスクを開始します。
 
-### ChatGPT Work on the web
+### Web版ChatGPT Work
 
-A local repo marketplace is not automatically published to the web plugin directory. A workspace administrator must distribute the plugin through an approved marketplace or workspace policy, or the plugin must be submitted for publication. After it is available in the plugin directory, install it there and start a new task.
+ローカルのリポジトリ・マーケットプレイスは、Web版のプラグインディレクトリへ自動的には公開されません。ワークスペース管理者が、承認済みのマーケットプレイスまたはワークスペースポリシーを通じてプラグインを配布するか、プラグインを公開申請する必要があります。
 
-See the official OpenAI documentation for [building plugins](https://developers.openai.com/codex/build-plugins), [installing plugins](https://developers.openai.com/codex/plugins), and [using subagents](https://developers.openai.com/codex/subagents).
+プラグインディレクトリに表示された後、そこからインストールし、新しいタスクを開始してください。
 
-## Use
+詳細は、OpenAI公式ドキュメントの[プラグインの構築](https://developers.openai.com/codex/build-plugins)、[プラグインのインストールと利用](https://developers.openai.com/codex/plugins)、[サブエージェントの利用](https://developers.openai.com/codex/subagents)を参照してください。
 
-Invoke the skill explicitly when you want predictable delegation:
+## 使い方
 
-> Use $run-shogun-work to investigate this issue, implement the fix, and have another agent review it.
+確実に複数エージェントへ分担させたい場合は、プロンプトで`run-shogun-work`スキルを明示的に指定します。
 
-Other examples:
+> $run-shogun-work を使って、この問題の調査、修正の実装、別エージェントによるレビューを行ってください。
 
-- “Use the Shogun formation to compare these policy options using primary sources.”
-- “Delegate code exploration, implementation, and testing to separate agents.”
-- “Use three agents to analyze these documents, then return one reconciled report.”
+その他の例：
 
-The skill can also activate implicitly for requests that explicitly ask for Multi-Agent Shogun, subagents, delegation, or parallel agent work.
+- 「$run-shogun-workを使い、一次情報に基づいて複数の政策案を比較してください」
+- 「コード調査、実装、テストをそれぞれ別のエージェントに担当させてください」
+- 「3つのエージェントで資料を分担して分析し、内容を照合した一つの報告書にまとめてください」
 
-## Differences from CLI mode
+Multi-Agent Shogun、サブエージェント、委任、並列実行などを明示的に依頼した場合は、スキルが自動的に選択されることもあります。
 
-| Area | CLI mode | ChatGPT Work mode |
+## CLI版との違い
+
+| 項目 | CLI版 | ChatGPT Work版 |
 |---|---|---|
-| Runtime | tmux plus multiple AI CLIs | Native ChatGPT Work subagents |
-| Formation | Shogun, Karo, 7 Ashigaru, Gunshi | Lead Shogun/Karo plus up to 3 subagents |
-| Coordination | YAML queues and inbox files | Native agent threads and messages |
-| Persistence | tmux sessions and repository files | Current Work task and saved artifacts |
-| Setup | Shell scripts and CLI authentication | Install plugin and invoke the skill |
+| 実行基盤 | tmuxと複数のAI CLI | ChatGPT Workのネイティブ・サブエージェント |
+| 編成 | 将軍、家老、足軽7体、軍師 | 将軍・家老を兼ねる親エージェント＋最大3つのサブエージェント |
+| 連絡方法 | YAMLキューと受信箱ファイル | ネイティブのエージェントスレッドとメッセージ |
+| 状態保持 | tmuxセッションとリポジトリ内ファイル | 現在のWorkタスクと保存された成果物 |
+| 初期設定 | シェルスクリプトと各CLIの認証 | プラグインのインストールとスキルの呼び出し |
 
-The Work formation deliberately combines Shogun and Karo in the lead agent. With a four-agent capacity, a separate manager would consume a slot without adding execution capacity.
+ChatGPT Work版では、親エージェントが将軍と家老を兼任します。同時に利用できるエージェントが4つの場合、管理専用の家老を別に置くと、実作業を担当できる枠が減ってしまうためです。
 
-## Verification
+サブエージェントの役割は固定されていません。タスクに応じて、コードや資料の調査、実装、テスト、一次情報の収集、独立レビューなどを割り当てます。
 
-Validate the package with the built-in plugin and skill validators before publishing changes:
+## 実行時の基本ルール
+
+- 独立して実行できる作業だけを並列化します。
+- 同じファイルを複数のエージェントに同時編集させません。
+- 親エージェントが要件整理、作業分担、成果の統合、最終確認を担当します。
+- サブエージェントの完了報告だけで合格とせず、親エージェントがファイル、差分、テスト結果などを確認します。
+- 実行環境で利用できるサブエージェント数が少ない場合は、その範囲内で編成を調整します。
+- tmux、AI CLI、YAMLメールボックス、常駐監視プロセスは起動しません。
+
+## 制約
+
+ChatGPT Work版は、CLI版のような常駐型システムではありません。次の機能は保証しません。
+
+- 足軽7体と軍師1体を常時稼働させること
+- tmuxセッションを利用した長時間の常駐
+- YAMLキューによるセッションをまたいだ自動処理
+- ローカル環境でのバックグラウンドデーモン
+- 各AI CLIの権限回避オプションを利用した無人実行
+
+ChatGPT Work版は、利用できるサブエージェント数に適応し、タスクごとに作業を分担・統合する仕組みとして動作します。
+
+## 検証
+
+変更を公開する前に、組み込みの検証ツールでプラグインとスキルを確認します。
 
 ```bash
 python3 /path/to/plugin-creator/scripts/validate_plugin.py plugins/multi-agent-shogun
