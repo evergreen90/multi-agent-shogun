@@ -1,0 +1,20 @@
+{
+  "name": "multi-agent-shogun",
+  "interface": {
+    "displayName": "Multi-Agent Shogun"
+  },
+  "plugins": [
+    {
+      "name": "multi-agent-shogun",
+      "source": {
+        "source": "local",
+        "path": "./plugins/multi-agent-shogun"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

@@ -1,3 +1,14 @@
+# ChatGPT Work environment routing
+
+When native subagent collaboration tools are available in ChatGPT Work or Codex and this repository is not running inside the tmux formation:
+
+1. Do not run the Session Start / Recovery procedure below, inspect tmux panes, launch AI CLIs, start inbox watchers, or use queue YAML as an agent-control plane.
+2. For requests that ask for Multi-Agent Shogun, subagents, delegation, or parallel work, use the `run-shogun-work` skill and native subagent tools.
+3. The lead agent acts as both Shogun and Karo. Delegate independent work to up to three subagents, integrate their results, and verify the combined output.
+4. Keep the CLI/tmux procedures below authoritative only when the tmux formation is actually active.
+
+---
+
 ---
 # multi-agent-shogun System Configuration
 version: "3.0"
