@@ -13,15 +13,15 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Multi-Agent Shogun",
-    "shortDescription": "Delegate work and watch verified agent coordination.",
-    "longDescription": "Runs a ChatGPT Work-native Shogun formation: one lead agent plans and integrates while up to three subagents execute independent work, with concise live summaries of real delegation, reports, challenges, and decisions.",
+    "shortDescription": "Delegate work and watch a verified period-drama council.",
+    "longDescription": "Runs a ChatGPT Work-native Shogun formation: one lead agent plans and integrates while up to three subagents execute independent work, with concise Sengoku-period drama summaries of real delegation, reports, challenges, and decisions.",
     "developerName": "evergreen90",
     "category": "Productivity",
     "capabilities": ["Multi-agent orchestration", "Parallel delegation", "Live council updates", "Integrated review"],
     "defaultPrompt": [
-      "Use the Shogun formation to complete this task in parallel and show concise live council updates.",
-      "Delegate research, implementation, and review to separate agents and relay material coordination events.",
-      "Use a multi-agent team, make real agent reports visible, and return one verified result."
+      "Use the Shogun formation to complete this task in parallel and show concise Sengoku-period drama live council updates.",
+      "Delegate research, implementation, and review to separate agents and relay material coordination events in period-drama style.",
+      "Use a multi-agent team, make real agent reports visible in Shogun-style dialogue, and return one verified result."
     ]
   }
 }
