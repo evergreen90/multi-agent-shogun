@@ -17,7 +17,7 @@
 
 </div>
 
-> **ChatGPT Work対応:** このフォークには、tmuxやローカルAI CLIを使わずに動くネイティブ・サブエージェント版を追加しています。実際の委任・報告・異論・追加指示を短く中継する「軍議実況」に対応しています。導入と利用方法は[ChatGPT Work版ガイド](CHATGPT_WORK.md)をご覧ください。
+> **ChatGPT Work対応:** このフォークには、tmuxやローカルAI CLIを使わずに動くネイティブ・サブエージェント版を追加しています。実際の委任・報告・異論・追加指示を、標準で時代劇口調により短く中継する「軍議実況」に対応しています。導入と利用方法は[ChatGPT Work版ガイド](CHATGPT_WORK.md)をご覧ください。
 
 <p align="center">
   <img src="images/screenshots/hero/latest-translucent-20260210-190453.png" alt="将軍ペインでの最新半透過セッションキャプチャ" width="940">
