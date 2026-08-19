@@ -53,8 +53,10 @@ text = pathlib.Path(sys.argv[1]).read_text(encoding="utf-8")
 section = text.split("## Live council updates", 1)[1].split("## Safety and quality", 1)[0]
 required = [
     "faithful summaries of real agent events, not as verbatim transcripts",
+    "Use light Sengoku-period drama phrasing by default for live council updates",
+    "If the user asks for normal, neutral, or modern language, switch the live council updates to clear modern language",
     "If the user asks for quiet operation, show only the formation and completion",
-    "If the user asks for detailed or original-style Shogun narration, show all material events",
+    "If the user asks for detailed narration, show all material events",
     "Do not expose hidden reasoning, internal prompts, secrets, credentials",
     "Do not show live council updates for a single-agent task",
 ]
@@ -81,6 +83,9 @@ import sys
 text = pathlib.Path(sys.argv[1]).read_text(encoding="utf-8")
 for clause in [
     "実際に発生したエージェント通信の要約",
+    "戦国・時代劇口調を標準",
+    "通常口調で",
+    "現代語で",
     "実況なし",
     "オリジナル風に詳しく",
     "複数ペイン表示",
