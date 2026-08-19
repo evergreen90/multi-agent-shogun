@@ -17,7 +17,7 @@ Run 10 AI coding agents in parallel — **Claude Code, OpenAI Codex, GitHub Copi
 
 </div>
 
-> **ChatGPT Work support:** This fork includes a native subagent plugin that runs without tmux or local AI CLIs. See [Multi-Agent Shogun for ChatGPT Work](CHATGPT_WORK.md).
+> **ChatGPT Work support:** This fork includes a native subagent plugin that runs without tmux or local AI CLIs, with concise live council updates based on real subagent events. See [Multi-Agent Shogun for ChatGPT Work](CHATGPT_WORK.md).
 
 <p align="center">
   <img src="images/screenshots/hero/latest-translucent-20260210-190453.png" alt="Latest translucent command session in the Shogun pane" width="940">
