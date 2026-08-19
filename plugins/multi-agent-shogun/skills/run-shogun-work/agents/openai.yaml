@@ -1,7 +1,7 @@
 interface:
   display_name: "Multi-Agent Shogun"
-  short_description: "Coordinate subagents with visible live council updates"
-  default_prompt: "Use $run-shogun-work to delegate independent workstreams, show concise live council updates, and return one verified result."
+  short_description: "Coordinate subagents with period-drama live updates"
+  default_prompt: "Use $run-shogun-work to delegate independent workstreams, show concise Sengoku-period drama live council updates, and return one verified result."
 
 policy:
   allow_implicit_invocation: true
