@@ -29,6 +29,44 @@ Read [roles-and-patterns.md](references/roles-and-patterns.md) when choosing a f
 9. Run proportional verification on the integrated result. Treat skipped tests as unverified, not passed.
 10. Return one self-contained answer that states the outcome, evidence or tests, material assumptions, and any remaining limitations.
 
+## Live council updates
+
+When two or more agents participate, make their coordination visible in the main chat with concise commentary updates. Treat these updates as faithful summaries of real agent events, not as verbatim transcripts.
+
+- After successful spawning, announce the confirmed formation and each assignment. Never describe an agent as working before the spawn succeeds.
+- Relay only material events: a significant finding, disagreement, blocker, received report, completed follow-up instruction, failure, or completion.
+- Attribute every line to one stable role and event type, for example `Ashigaru 1 | Report`, `Gunshi | Challenge`, or `Shogun | Decision`. Keep the agent's report separate from the lead agent's interpretation or decision.
+- When agents disagree, summarize both positions before stating the Shogun's decision. Do not silently flatten the disagreement.
+- When re-steering an agent, send the instruction first and report it as sent only after the tool succeeds.
+- Use factual state terms such as `assigned`, `working`, `report received`, `needs verification`, `completed`, or `failed`. Do not imply progress that has not been observed.
+- Keep each update to one to four short lines and suppress routine tool calls, repeated status, and heartbeat messages.
+- Do not expose hidden reasoning, internal prompts, secrets, credentials, unnecessary internal identifiers, or irrelevant scratch details.
+- Use light Sengoku-period drama phrasing by default for live council updates. Keep statements concise and intelligible; do not let role-play obscure facts, evidence, uncertainty, failure, or risk.
+- If the user asks for normal, neutral, or modern language, switch the live council updates to clear modern language. If the user asks for quiet operation, show only the formation and completion. If the user asks for detailed narration, show all material events while remaining concise and evidence-based.
+- Do not show live council updates for a single-agent task.
+- Keep the final answer self-contained. Do not require the user to reconstruct the result from earlier commentary or repeat the entire live log.
+
+Apply this event policy exactly:
+
+| Observed event | Live council action |
+|---|---|
+| Spawn requested but not confirmed | Show no assignment or working status |
+| Spawn succeeded | Show `assigned` with the role and task |
+| Spawn failed | Show `failed`; do not imply that the agent started |
+| Material report received | Show a faithful summary attributed to that agent |
+| Reports disagree | Show both positions, then a separate Shogun decision |
+| Follow-up requested but not confirmed | Show no sent status |
+| Follow-up succeeded | Show the instruction as sent |
+| Report contains sensitive or internal data | Omit or redact that data |
+| Single-agent execution | Show no live council update |
+| Final response | Return a self-contained result independent of the live log |
+
+Recommended default format:
+
+`⚔️ Ashigaru 1 | Report: Ha! The official sources are confirmed. Two implementation details remain to be verified, my lord.`
+
+Match the user's language. Use period-drama flavor lightly rather than archaic wording that harms comprehension. Preserve attribution, evidence, uncertainty, and safety rules in every style.
+
 ## Safety and quality
 
 - Preserve user changes and repository state. Never use destructive Git or filesystem commands unless the user explicitly authorizes them.
@@ -39,4 +77,4 @@ Read [roles-and-patterns.md](references/roles-and-patterns.md) when choosing a f
 
 ## Status language
 
-Use clear modern language by default. Use light Sengoku-themed labels only when the user asks for the role-play style; never let the theme obscure status, risk, or evidence.
+Use light Sengoku-period drama language by default for live council updates. Switch to clear modern language only when the user requests normal, neutral, or modern wording. Never let the theme obscure status, risk, evidence, or whether a line is a summary rather than a verbatim quote.

@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+
+### Added
+- **ChatGPT Work plugin 0.2.0**: concise live council updates that relay confirmed delegation, material reports, disagreements, re-steering, failures, and completion from native subagents
+- Contract tests for event-grounded narration, sensitive-data safeguards, quiet/detailed modes, and documented UI limitations
+
+### Changed
+- ChatGPT Work skill and plugin metadata now distinguish faithful event summaries from verbatim transcripts and keep final answers self-contained\n- Live council updates now use light Sengoku-period drama phrasing by default, with an explicit modern-language override
+
 ## [5.2.0] - 2026-06-06
 
 ### Added
