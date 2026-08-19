@@ -1,7 +1,7 @@
 {
   "name": "multi-agent-shogun",
-  "version": "0.1.0",
-  "description": "ChatGPT Work-native multi-agent orchestration inspired by Multi-Agent Shogun.",
+  "version": "0.2.0",
+  "description": "ChatGPT Work-native multi-agent orchestration with visible, evidence-based coordination updates.",
   "author": {
     "name": "evergreen90",
     "url": "https://github.com/evergreen90"
@@ -13,15 +13,15 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Multi-Agent Shogun",
-    "shortDescription": "Delegate complex work to a coordinated agent team.",
-    "longDescription": "Runs a ChatGPT Work-native Shogun formation: one lead agent plans and integrates while up to three subagents execute independent research, implementation, and review tasks in parallel.",
+    "shortDescription": "Delegate work and watch verified agent coordination.",
+    "longDescription": "Runs a ChatGPT Work-native Shogun formation: one lead agent plans and integrates while up to three subagents execute independent work, with concise live summaries of real delegation, reports, challenges, and decisions.",
     "developerName": "evergreen90",
     "category": "Productivity",
-    "capabilities": ["Multi-agent orchestration", "Parallel delegation", "Integrated review"],
+    "capabilities": ["Multi-agent orchestration", "Parallel delegation", "Live council updates", "Integrated review"],
     "defaultPrompt": [
-      "Use the Shogun formation to complete this task in parallel.",
-      "Delegate research, implementation, and review to separate agents.",
-      "Use a multi-agent team and return one verified result."
+      "Use the Shogun formation to complete this task in parallel and show concise live council updates.",
+      "Delegate research, implementation, and review to separate agents and relay material coordination events.",
+      "Use a multi-agent team, make real agent reports visible, and return one verified result."
     ]
   }
 }
