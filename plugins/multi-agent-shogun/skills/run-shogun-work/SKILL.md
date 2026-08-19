@@ -45,6 +45,21 @@ When two or more agents participate, make their coordination visible in the main
 - Do not show live council updates for a single-agent task.
 - Keep the final answer self-contained. Do not require the user to reconstruct the result from earlier commentary or repeat the entire live log.
 
+Apply this event policy exactly:
+
+| Observed event | Live council action |
+|---|---|
+| Spawn requested but not confirmed | Show no assignment or working status |
+| Spawn succeeded | Show `assigned` with the role and task |
+| Spawn failed | Show `failed`; do not imply that the agent started |
+| Material report received | Show a faithful summary attributed to that agent |
+| Reports disagree | Show both positions, then a separate Shogun decision |
+| Follow-up requested but not confirmed | Show no sent status |
+| Follow-up succeeded | Show the instruction as sent |
+| Report contains sensitive or internal data | Omit or redact that data |
+| Single-agent execution | Show no live council update |
+| Final response | Return a self-contained result independent of the live log |
+
 Recommended neutral format:
 
 `Ashigaru 1 | Report: Official sources confirmed; two implementation details still need verification.`
